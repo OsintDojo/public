@@ -26,9 +26,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="-582.40594"
-     inkscape:cy="686.75272"
+     inkscape:zoom="0.24748737"
+     inkscape:cx="-1560.8996"
+     inkscape:cy="1362.531"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -54,8 +54,8 @@
      inkscape:groupmode="layer"
      id="layer1">
     <image
-       y="103.79746"
-       x="-355.12753"
+       y="117.33533"
+       x="5.1517897"
        id="image928"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAkAAAHpCAYAAADge2WkAAAABHNCSVQICAgIfAhkiAAAABl0RVh0
 U29mdHdhcmUAZ25vbWUtc2NyZWVuc2hvdO8Dvz4AACAASURBVHic7N13eBTV/sfx9yYhS0toCTXS
@@ -1474,14 +1474,14 @@ yUcwiGIRWYpb+GuWui04fG+ppt7xBC+nyN2Pk81nWdwN9ust3r/1l8bwZs1uytS9fFb6KmlJap5f
 +TYmyQK09TvJH9OzRxAEQRAEQbgX/gc1jFkEbt8wtwAAAABJRU5ErkJggg==
 "
        preserveAspectRatio="none"
-       height="129.38126"
-       width="273.31458" />
+       height="94.46183"
+       width="199.54819" />
     <rect
-       style="opacity:1;fill:#000000;fill-opacity:1.0;stroke:#e6edee;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#e6edee;stroke-width:0.36505222;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect931"
-       width="144.76489"
-       height="10.961308"
-       x="-271.3869"
-       y="104.61012" />
+       width="105.69349"
+       height="8.0028992"
+       x="66.291191"
+       y="117.92866" />
   </g>
 </svg>
