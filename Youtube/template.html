@@ -1,0 +1,19 @@
+<!-- Begin HTML section for search tool -->
+
+  <label>Google Search</label>
+  <input type="text" id="Google" name="Google">
+  <button onclick="searchGoogle()">Search</button>
+  <br>
+    
+<!-- End HTML section for search tool -->
+
+
+<!-- Begin Javascript section for search scripts -->
+
+<script>
+	function searchGoogle() 
+		{window.open('https://www.google.com/search?&q=' + document.getElementById('Google').value);}
+		
+</script>
+
+<!-- End Javascript section for search scripts -->
