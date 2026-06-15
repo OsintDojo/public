@@ -1,35 +1,48 @@
-# Imports
 import discord
 from discord import app_commands
 from discord.ext import commands
 import requests
 from config import token, apikey
 
-# Bot Configuration
-intents = discord.Intents.default() 
+# Configuration du bot
+intents = discord.Intents.default()
 intents.message_content = True
-bot = commands.Bot(intents=intents, command_prefix='/')
 
-#Sync
+bot = commands.Bot(command_prefix="/", intents=intents)
+
+# Au démarrage
 @bot.event
 async def on_ready():
     await bot.tree.sync()
-    print('Bot is running and has synced.')
+    print("Bot connecté et prêt")
 
-# Establish Command Name and Description 
-@bot.tree.command(name='***Enter a name***', description='***Enter a description***')
+# Commande /lookup
+@bot.tree.command(
+    name="lookup",
+    description="Recherche des informations sur une adresse IP"
+)
+@app_commands.describe(
+    user_input="Entrez une adresse IP"
+)
+async def lookup(interaction: discord.Interaction, user_input: str):
 
-# Bot Prompt, API Call, and Response Functionality
-@app_commands.describe(user_input = "***Ener a Prompt for the user***: ")                 # Prompt User for Input
-async def bot_name(interaction: discord.Interaction, user_input: str):                 
+    url = f"https://api.ipgeolocation.io/ipgeo?apiKey={apikey}&ip={user_input}"
 
-    # Use Requests to Obtain Data from API
-    url = f'***Enter an API Endpoint***{apikey}***Input Variable***{user_input}'
     response = requests.get(url)
-    json_response = response.json()
+    data = response.json()
 
-    # Send Message Containing Requested Data to User
-    await interaction.response.send_message(f'***Enter a message to send to user***', ephemeral=True)
-    return
+    ip = data.get("ip", "Inconnue")
+    country = data.get("country_name", "Inconnu")
+    city = data.get("city", "Inconnue")
+    isp = data.get("isp", "Inconnu")
 
-bot.run(token) # Run Bot
+    await interaction.response.send_message(
+        f"🌐 IP : {ip}\n"
+        f"🏳️ Pays : {country}\n"
+        f"🏙️ Ville : {city}\n"
+        f"📡 ISP : {isp}",
+        ephemeral=True
+    )
+
+# Lancement du bot
+bot.run(token)
